@@ -23,6 +23,18 @@ var someFn = function(num1)
     console.log("First call", counter(3));
     console.log("second call", counter(1));
     console.log("Third call", counter(5));
+    
+    //Questão3
+    function calculator(val1,val2)
+    {
+        return function(callback)
+        {
+            return callback(val1,val2);
+        };
+    }
+
+    var sum = calculator(1,2);
+    sum(function (val1, val2) { return val1 + val2 });
   
 //Questão4
   var a = 5;
@@ -39,17 +51,12 @@ var someFn = function(num1)
   //O resultado apresentado sera: 4,1,5,1
 
   //Questão5
-  var num = 1;
-  var mult;
-  function multiplica(num){
-    var index = 1;
-    if (index == 10) {
-        index = 1;
-        num++;
-    }
-    mult = index * num;
-    index++;
-    return mult;
+ function num(numero)
+{
+  for(var index = 1; index <= 10; index++)
+  {
+    console.log(index * numero);
     
   }
-  console.log(multiplica());
+}
+num(2);
